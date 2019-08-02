@@ -1,0 +1,11 @@
+{
+    "name": "媒体流抓取",
+    "description" : "获取网页中的视频流，用来抓取和录制",
+    "version": "1.0",
+    "manifest_version": 2,
+    
+    "browser_action": {
+        "default_popup": "hello.html",
+        "default_icon": "./assets/images/img.png"
+      }
+  }
