@@ -3,28 +3,30 @@
     "description": "获取网页中的视频流，用来抓取和录制",
     "version": "1.0",
     "permissions": [
-        "storage"
+        "storage",
+        "declarativeContent",
+        "activeTab"
     ],
     "manifest_version": 2,
-    // "browser_action": {
-    //     "default_popup": "popup.html",
-    //     "default_icon1": "./assets/images/img.png",
-    //     "default_icon": {
-    //       "16": "./assets/images/start_16.png",
-    //       "32": "./assets/images/start_32.png",
-    //       "48": "./assets/images/start_48.png",
-    //       "128": "./assets/images/start_128.png"
-    //     }
-    // },
-    "page_action": {
+    "browser_action": {
         "default_popup": "popup.html",
+        "default_icon1": "./assets/images/img.png",
         "default_icon": {
-            "16": "./assets/images/start_16.png",
-            "32": "./assets/images/start_32.png",
-            "48": "./assets/images/start_48.png",
-            "128": "./assets/images/start_128.png"
+          "16": "./assets/images/start_16.png",
+          "32": "./assets/images/start_32.png",
+          "48": "./assets/images/start_48.png",
+          "128": "./assets/images/start_128.png"
         }
     },
+    // "page_action": {
+    //     "default_popup": "popup.html",
+    //     "default_icon": {
+    //         "16": "./assets/images/start_16.png",
+    //         "32": "./assets/images/start_32.png",
+    //         "48": "./assets/images/start_48.png",
+    //         "128": "./assets/images/start_128.png"
+    //     }
+    // },
     "icons": {
         "16": "./assets/images/start_16.png",
         "32": "./assets/images/start_32.png",
@@ -45,5 +47,17 @@
             "background.js"
         ],
         "persistent": false
-    }
+    },
+    "options_page": "options.html",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ]
 }
