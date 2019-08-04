@@ -5,7 +5,10 @@
     "permissions": [
         "storage",
         "declarativeContent",
-        "activeTab"
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "*://*/"
     ],
     "manifest_version": 2,
     "browser_action": {
@@ -46,7 +49,7 @@
         "scripts": [
             "background.js"
         ],
-        "persistent": false
+        "persistent": true
     },
     "options_page": "options.html",
     "content_scripts": [

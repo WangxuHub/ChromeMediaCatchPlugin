@@ -1,0 +1,19 @@
+{
+  "name": "chromemediacatchplugin",
+  "version": "1.0.0",
+  "description": "chrome插件，获取媒体流",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WangxuHub/ChromeMediaCatchPlugin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WangxuHub/ChromeMediaCatchPlugin/issues"
+  },
+  "homepage": "https://github.com/WangxuHub/ChromeMediaCatchPlugin#readme"
+}

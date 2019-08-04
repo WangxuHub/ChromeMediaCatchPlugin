@@ -39,34 +39,43 @@ document.getElementById('btnShowMedia').onclick=function(){
 
 
 document.getElementById('btnMsg').onclick = function () {
-
-    sendMSg('getVideoSrc', function (data) {
+    sendMSg('content.getVideoSrc', function (data) {
         console.log(data);
     });
-
-    // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-    //     chrome.tabs.sendMessage(tabs[0].id, { greeting: "hello" }, function (response) {
-    //         console.log(response.farewell);
-    //     });
-    // });
 };
+
+
+document.getElementById('btnViewMsg').onclick = function () {
+    sendMSg('view.setSrc', "cccccccccccccccc", function (data) {
+        console.log(data);
+    });
+};
+
+
 
 
 function sendMSg(){
     var argus = arguments;
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        var cmdType = argus[0];
-        var sendArgus = [];
-        for(var i=1;i< argus.length - 2;i++){
-            sendArgus.push(argus[i]);
-        }
-        var callback = argus[argus.length - 1];
-        
-        var msgObj = {
-            cmdType:cmdType,
-            argus:sendArgus
-        };
+    var cmdType = argus[0];
+    var sendArgus = [];
+    for(var i=1;i< argus.length - 1;i++){
+        sendArgus.push(argus[i]);
+    }
+    var callback = argus[argus.length - 1];
+    
+    var msgObj = {
+        cmdType:cmdType,
+        argus:sendArgus
+    };
 
+    var queryTabs = { active: true, currentWindow: true };
+
+    if (cmdType.indexOf('view.') === 0) {
+        let url = chrome.runtime.getURL('MediaView.html');
+        queryTabs = { url: url };
+    }
+
+    chrome.tabs.query(queryTabs, function (tabs) {
         chrome.tabs.sendMessage(tabs[0].id, msgObj, function (response) {
             callback(response);
         });
