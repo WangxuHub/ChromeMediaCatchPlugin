@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/WangxuHub/ChromeMediaCatchPlugin/issues"
   },
-  "homepage": "https://github.com/WangxuHub/ChromeMediaCatchPlugin#readme"
+  "homepage": "https://github.com/WangxuHub/ChromeMediaCatchPlugin#readme",
+  "dependencies": {
+    "g": "^2.0.1",
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.31"
+  }
 }

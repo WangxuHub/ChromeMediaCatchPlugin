@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0px;
+}
+
+.video-js .vjs-big-play-button {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-container {}
+
+#canvasVideo,
+.main-container {
+    max-width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+#main-video{
+    max-width: 100%;
+}
