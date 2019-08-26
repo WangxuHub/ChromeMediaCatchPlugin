@@ -77,7 +77,7 @@ $("#btnPlay").click(function () {
   }
 
   $("#btnWsSend").click(function () {
-    var videoName = "豆奶的号角.mp4";
+    var videoName = "cc.mp4";
 
     setInterval(function () {
       var base64Image = canvas.toDataURL();

@@ -69,8 +69,9 @@ methodHander.uploadVideoFrame = function (json, cb) {
         existDir[dir] = 1;
     }
 
-    // var fileName = path.join(dir,  (existDir[dir]++)+'.png');
-    var fileName = path.join(dir,  (currentTime*10000).toFixed(0)+'.png');
+    // 只能用递增序号
+    var fileName = path.join(dir,  (existDir[dir]++)+'.png'); 
+    //var fileName = path.join(dir,  (currentTime*10000).toFixed(0)+'.png');
     currentTime
 
     var base64Data = base64Image.replace(/^data:image\/\w+;base64,/, "");
