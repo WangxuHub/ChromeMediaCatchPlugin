@@ -330,3 +330,5 @@ ASALocalRun/
 .mfractor/
 /services/videos
 /services/tools
+/services/tt.mp4
+/services/ffmpeg.exe

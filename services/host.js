@@ -66,10 +66,12 @@ methodHander.uploadVideoFrame = function (json, cb) {
         // if(!stat.isDirectory()){
         //     fs.mkdirSync(dir);
         // }
-        existDir[dir] = true;
+        existDir[dir] = 1;
     }
 
-    var fileName = path.join(dir, currentTime + '.png');
+    // var fileName = path.join(dir,  (existDir[dir]++)+'.png');
+    var fileName = path.join(dir,  (currentTime*10000).toFixed(0)+'.png');
+    currentTime
 
     var base64Data = base64Image.replace(/^data:image\/\w+;base64,/, "");
     var dataBuffer = new Buffer(base64Data, 'base64');

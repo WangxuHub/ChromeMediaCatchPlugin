@@ -1,0 +1,1 @@
+ffmpeg -y -f image2 -i videos/cc/%d.png -vcodec libx264 -r 25 -c:v h264_nvenc tt.mp4
