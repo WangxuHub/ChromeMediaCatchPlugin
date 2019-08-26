@@ -4,6 +4,7 @@
   "description": "chrome插件，获取媒体流",
   "main": "index.js",
   "scripts": {
+    "dev": "cd src && http-server -o MediaView.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,7 @@
     "http-server": "^0.11.1"
   },
   "devDependencies": {
-    "@types/jquery": "^3.3.31"
+    "@types/jquery": "^3.3.31",
+    "nodejs-websocket": "^1.7.2"
   }
 }

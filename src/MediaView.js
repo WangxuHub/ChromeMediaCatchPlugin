@@ -45,8 +45,52 @@ $("#btnPlay").click(function () {
   draw1();
 });
 
+(function () {
+  var ws = new WebSocket('ws://127.0.0.1:3000');
 
+  ws.onopen = function (e) {
+    console.log("连接服务器成功");
+    ws.send("game1");
+  }
+  ws.onclose = function (e) {
+    console.log("服务器关闭");
+  }
+  ws.onerror = function () {
+    console.log("连接出错");
+  }
 
+  ws.onmessage = function (e) {
+    console.log(e);
+  }
+
+  $("#iptText").keydown(function (e) {
+    if (e.keyCode == 13) {
+      ws.send($(this).val());
+    }
+  });
+
+  function send(method, data){
+    ws.send(JSON.stringify({
+      postType: method,
+      data: data
+    }));
+  }
+
+  $("#btnWsSend").click(function () {
+    var videoName = "豆奶的号角.mp4";
+
+    setInterval(function () {
+      var base64Image = canvas.toDataURL();
+      var currentTime = video.currentTime;
+      send('uploadVideoFrame', {
+        base64Image: base64Image,
+        currentTime: currentTime,
+        videoName: videoName
+      });
+    }, 1000 / 25);
+    return false;
+  });
+})();
 
 
 // // 
